@@ -19,7 +19,7 @@ function enregistrer_produit(){
     $description = $_POST['description'];
     $prix = $_POST['prix'];
     $name_image= $_FILES['image']['name'];
-    include __DIR__.'/../Entity/Produit.php';
+    include_once __DIR__.'/../Entity/Produit.php';
 
     // On peut valider le fichier et le stocker définitivement
     move_uploaded_file($_FILES['image']['tmp_name'],  

@@ -7,7 +7,7 @@
                       class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title"><?= $unuser['email']  ?></h5>
-                        <p class="card-text"><?= $unuser['password'] ?></p>
+                        <p class="card-text"><?= $unuser['motdepasse'] ?></p>
                     </div>
                     <a href="/detail_user?email=<?= $unuser['email']?>">detail user</a>
                 </div>
