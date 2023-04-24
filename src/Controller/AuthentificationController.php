@@ -23,7 +23,7 @@ function verifie_authentication(){
         return; 
     }
     //CAS 2 l'email existe et il faut verifier si le mot de passe
-   if ($unuser['password'] == $pwd && $unuser['email']==$email) {
+   if ($unuser['motdepasse'] == $pwd && $unuser['email']==$email) {
         // 1 creation de la session
         $_SESSION["user"]=$email;
         include __DIR__.'/../../templates/espace_membre.php';
@@ -40,6 +40,11 @@ function verifie_authentication(){
         include __DIR__.'/../../templates/form_connexion.php';
     }
 }
+function deconnexion(){
+    session_destroy();
+    header('Location:index.php');
+    }   
+
 
 
 // fonction de deconnexion

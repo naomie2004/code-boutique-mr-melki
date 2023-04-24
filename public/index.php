@@ -9,6 +9,15 @@
 // gestion de la variable path_info
 // include "header.php";
 session_start();
+
+var_dump($_SESSION);
+$connexion=false;
+if (isset($_SESSION['user'])) {
+    $connexion = true;
+
+}  
+echo $connexion;  
+
 //include_once __DIR__.'/../src/Entity/User.php';
 //echo $_SESSION['user'];
 //$user=getDetailUser($_SESSION['user']);
@@ -106,6 +115,14 @@ elseif ($page=="/connexion"){
     // fonction qui ramene du vue  
     form_connexion();
 }
+
+// afficher un user en particulier
+elseif ($page=="/deconnexion"){ 
+    include __DIR__.'/../src/Controller/AuthentificationController.php';
+    // fonction qui va verifie les identifiants de connexion
+    deconnexion();
+}
+
 // afficher un user en particulier
 elseif ($page=="/verifie_authentication"){ 
     include __DIR__.'/../src/Controller/AuthentificationController.php';

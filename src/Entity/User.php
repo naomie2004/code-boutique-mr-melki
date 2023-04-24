@@ -25,10 +25,10 @@
         $dbh=connect_bd();
         // 2 la requete d'insertion
         $info=$dbh->query(
-            "INSERT INTO user (id, email, password, image)
+            "INSERT INTO user (id, email, motdepasse, image)
              VALUES (NULL, '$email', '$password','$image')"
         );
-        echo "\nPDO::errorCode(): ", $info->errorCode();
+        //echo "\nPDO::errorCode(): ", $info->errorCode();
 
     }
 
