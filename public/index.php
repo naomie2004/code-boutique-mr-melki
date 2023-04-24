@@ -12,16 +12,16 @@ session_start();
 
 var_dump($_SESSION);
 $connexion=false;
+$admin=false;
 if (isset($_SESSION['user'])) {
     $connexion = true;
-
+    include_once __DIR__. '/../src/Entity/user.php';
+    $user_complet= getDetailUser($_SESSION['user']);
+    if ($user_complet['admin']==1){
+        $admin=true;
+    }
 }  
 echo $connexion;  
-
-//include_once __DIR__.'/../src/Entity/User.php';
-//echo $_SESSION['user'];
-//$user=getDetailUser($_SESSION['user']);
-
 
 //var_dump($user);
 include __DIR__.'/../templates/header.php';

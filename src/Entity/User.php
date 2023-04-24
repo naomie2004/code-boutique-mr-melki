@@ -40,5 +40,9 @@
           // print_r($resultat);
           return $resultat;
     }
+
+    function getAdmin($email){
+        $sql= "select * from user where email='$email'"
+    }
     
     ?>
